@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-signal: var(--signal);
+  --color-faint: var(--faint);
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius);
+}
+
+:root {
+  color-scheme: dark;
+  --radius: 5px;
+  --background: #070707;
+  --foreground: #e6e6e3;
+  --card: #0c0c0c;
+  --card-foreground: #e6e6e3;
+  --popover: #0c0c0c;
+  --popover-foreground: #e6e6e3;
+  --primary: #0f766e;
+  --primary-foreground: #f1f5f4;
+  --secondary: #111312;
+  --secondary-foreground: #e6e6e3;
+  --muted: #111312;
+  --muted-foreground: #8b8f8c;
+  --faint: #5a5e5b;
+  --accent: #134e4a;
+  --accent-foreground: #e6e6e3;
+  --signal: #2dd4bf;
+  --destructive: #b45309;
+  --border: #1d201f;
+  --input: #1d201f;
+  --ring: #0f766e;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection {
+    background: #134e4a;
+    color: #f1f5f4;
+  }
+}
+
+.grid-paper {
+  background-image:
+    linear-gradient(to right, #121514 1px, transparent 1px),
+    linear-gradient(to bottom, #121514 1px, transparent 1px);
+  background-size: 48px 48px;
+}
